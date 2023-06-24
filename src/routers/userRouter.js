@@ -1,13 +1,13 @@
 import express from "express";
 
-
 import { processLike, processRate } from "../controllers/userController.js";
 
 const userRouter = express.Router();
 
-// API xử lý like/unlike
-userRouter.get("/get-like", processLike);
-// API xử lý đánh giá
-userRouter.get("/get-rate", processRate);
+// API Xử lý like nhà hàng (like, unlike, lấy danh sách like theo nhà hàng và user)
+userRouter.get("/like/:user_id", processLike);
+
+// API Xử lý đánh giá nhà hàng (thêm đánh giá, lấy danh sách đánh theo nhà hàng và user)
+userRouter.get("/rate", processRate);
 
 export default userRouter;

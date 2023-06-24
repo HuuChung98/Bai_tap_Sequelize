@@ -5,17 +5,29 @@ let models = initModels(sequelize);
 
 const processLike = async (req, res) => {
   try {
-    let listFood = await models.order.findAll({
-      include: ["food"],
+    let { user_id } = req.params;
+    let listLikeRes = await models.like_res.findAll({
+      include: ["re"],
+    },{
+      where: { user_id }  
     });
-    res.send(listFood);
+    res.send(listLikeRes);
   } catch {
     res.send("lấy data fail");
   }
 };
 
-const processRate = (req, res) => {
-  res.send("lay data thanh cong");
+const processRate = async (req, res) => {
+  try {
+    // let { user_id, like_res } = req.params;
+
+    let listRateRes = await models.rate_res.findAll({
+      include: ["re"],
+    });
+    res.send(listRateRes);
+  } catch {
+    res.send("lấy data fail");
+  }
 };
 
 export { processLike, processRate };
