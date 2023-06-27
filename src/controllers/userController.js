@@ -1,5 +1,6 @@
 import initModels from "../models/init-models.js";
 import sequelize from "../models/index.js";
+import { successCode, failCode, errorCode } from "../config/response.js";
 
 let models = initModels(sequelize);
 
@@ -11,9 +12,9 @@ const processLike = async (req, res) => {
     },{
       where: { user_id }  
     });
-    res.send(listLikeRes);
+    successCode(res, listLikeRes, "lấy data thành công");
   } catch {
-    res.send("lấy data fail");
+    failCode(res ,"lấy data fail");
   }
 };
 
@@ -24,7 +25,7 @@ const processRate = async (req, res) => {
     let listRateRes = await models.rate_res.findAll({
       include: ["re"],
     });
-    res.send(listRateRes);
+    successCode(res, listRateRes, "lấy data fail");
   } catch {
     res.send("lấy data fail");
   }

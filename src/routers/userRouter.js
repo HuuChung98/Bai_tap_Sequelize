@@ -8,6 +8,6 @@ const userRouter = express.Router();
 userRouter.get("/like/:user_id", processLike);
 
 // API Xử lý đánh giá nhà hàng (thêm đánh giá, lấy danh sách đánh theo nhà hàng và user)
-userRouter.get("/rate", processRate);
+userRouter.get("/rate/:user_id", processRate);
 
 export default userRouter;
