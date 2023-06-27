@@ -14,7 +14,7 @@ const processLike = async (req, res) => {
     });
     successCode(res, listLikeRes, "lấy data thành công");
   } catch {
-    failCode(res ,"lấy data fail");
+    failCode(res ,"lấy data thất bại");
   }
 };
 
@@ -25,9 +25,9 @@ const processRate = async (req, res) => {
     let listRateRes = await models.rate_res.findAll({
       include: ["re"],
     });
-    successCode(res, listRateRes, "lấy data fail");
+    successCode(res, listRateRes, "lấy data thất thành công");
   } catch {
-    res.send("lấy data fail");
+    failCode(res, "lấy data thất bại");
   }
 };
 
