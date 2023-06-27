@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"user_id\": 1,\n    \"food_id\": 6,\n    \"amount\": 2\n}",
+					"raw": "{\n    \"user_id\": 5,\n    \"food_id\": 6,\n    \"amount\": 3\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -53,7 +53,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/user/like/:1",
+					"raw": "localhost:8080/api/user/like/1",
 					"host": [
 						"localhost"
 					],
@@ -62,13 +62,7 @@
 						"api",
 						"user",
 						"like",
-						":1"
-					],
-					"variable": [
-						{
-							"key": "1",
-							"value": null
-						}
+						"1"
 					]
 				}
 			},
@@ -80,7 +74,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/api/user/rate",
+					"raw": "localhost:8080/api/user/rate/1",
 					"host": [
 						"localhost"
 					],
@@ -88,7 +82,8 @@
 					"path": [
 						"api",
 						"user",
-						"rate"
+						"rate",
+						"1"
 					]
 				}
 			},
